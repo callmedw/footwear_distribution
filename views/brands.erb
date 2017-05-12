@@ -6,7 +6,7 @@
   <% if @brands.any? %>
   <ul>
     <% @brands.each do |brand| %>
-      <li><a href = "/brand/<%= brand.id %>"><%= brand.name %></a></li>
+      <li><a href = "/brand/<%= brand.id %>"><%= brand.name %>...$<%= brand.cost %></a></li>
     <% end %>
   </ul>
   <p>Click a brand to edit or see associated stores</p>
@@ -19,6 +19,8 @@
   <form action="/brands" method="post">
     <label for="name">Enter brand name here:</label>
     <input type="text" name="name">
+    <label for="cost">Enter the cost:</label>
+    <input type="number" name="cost">
 
     <button type="submit">Add Brand</button>
   </form>

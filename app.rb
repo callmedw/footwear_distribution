@@ -15,7 +15,7 @@ get '/brands' do
 end
 
 post '/brands' do
-  Brand.create(:name => params['name'])
+  Brand.create(:name => params['name'], :cost => params['cost'])
   redirect '/brands'
 end
 
@@ -34,11 +34,12 @@ end
 
 patch '/brand/:id' do
   name = params['name']
+  cost = params['cost']
   @brand = Brand.find(params['id'].to_i)
   if (name.split('').any?)
-    @brand.update({:name => name})
+    @brand.update({:name => name, :cost => cost})
   else
-    @brand.update({:name => "#{@brand.name}"})
+    @brand.update({:name => "#{@brand.name}", :cost => "#{@brand.cost}"})
   end
   redirect '/brands'
 end

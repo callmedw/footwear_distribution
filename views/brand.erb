@@ -4,12 +4,16 @@
 
 <div class="page_content">
   <h2> Update <%= @brand.name %> </h2>
+  <p> current cost $<%= @brand.cost %> </p>
 
-  <h4> Update the name of this brand. </h4>
+
+  <h4> Update the name or cost of this brand. </h4>
   <form action ="/brand/<%= @brand.id%>" method="post">
     <input type="hidden" name="_method" value="patch">
     <label for="name">Enter the new name:</label>
     <input type="text" name="name">
+    <label for="cost">Enter the cost:</label>
+    <input type="number" name="cost">
     <button type ="submit">Update</button>
   </form>
 

@@ -43,3 +43,13 @@
   font-family: "HCo Verlag", "CenturyGothic",
   sans-serif;
 }
+
+h2, h3 {
+  margin: auto;
+  text-align: center;
+  width: 100%;
+  font-family: "HCo Verlag", "CenturyGothic",  sans-serif;
+  text-transform: uppercase;
+  word-spacing: 1px;
+  height: 100%;
+}
