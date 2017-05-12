@@ -1,0 +1,41 @@
+<h3>Stores</h2>
+
+<% if @stores.any? %>
+
+<h3>Your stores:</h3>
+
+<ul>
+  <% @stores.each do |store| %>
+    <li><a href = "/store/<%= store.id %>"><%= store.name %></a></li>
+  <% end %>
+</ul>
+<h4>Click a store to edit or see associated brands</h4>
+<%else %>
+
+<p> You don't have any stores!! </p>
+<% end %>
+
+<form action="/stores" method="post">
+  <label for="name">Enter store name here:</label>
+  <input type="text" name="name">
+
+  <button type="submit">Add Category</button>
+</form>
+
+<% if @brands.any? %>
+
+<h2>Your brands:</h2>
+
+<ul>
+  <% @brands.each do |brand| %>
+    <li><a href = "/brand/<%= brand.id %>"><%= brand.name %></a></li>
+  <% end %>
+</ul>
+<h4>Click a brand to edit or see associated stores</h4>
+
+<%else %>
+
+
+<p> You don't have any brands!! </p>
+<% end %>
+<a href="/brands/new">Add Brand</a>
