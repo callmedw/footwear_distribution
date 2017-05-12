@@ -15,8 +15,12 @@ get '/brands' do
 end
 
 post '/brands' do
-  Brand.create(:name => params['name'], :cost => params['cost'])
-  redirect '/brands'
+  @brand = Brand.create(:name => params['name'], :cost => params['cost'])
+  if @brand.save
+    redirect '/brands'
+  else
+    erb(:error)
+  end
 end
 
 get '/brand/:id' do
@@ -26,21 +30,21 @@ get '/brand/:id' do
 end
 
 post '/brand/:id' do
+  @stores = Store.all
   @brand = Brand.find(params['id'].to_i)
   @brand.update(:store_ids => params['stores_id'])
-  @stores = Store.all
-  redirect "/brand/#{@brand.id}"
+  if @brand.update
+    redirect "/brand/#{@brand.id}"
+  else
+    erb(:error)
+  end
 end
 
 patch '/brand/:id' do
   name = params['name']
   cost = params['cost']
   @brand = Brand.find(params['id'].to_i)
-  if (name.split('').any?)
-    @brand.update({:name => name, :cost => cost})
-  else
-    @brand.update({:name => "#{@brand.name}", :cost => "#{@brand.cost}"})
-  end
+  @brand.update({:name => name, :cost => cost})
   redirect '/brands'
 end
 
@@ -57,8 +61,12 @@ get '/stores' do
 end
 
 post '/stores' do
-  Store.create(:name => params['name'])
-  redirect '/stores'
+  @store = Store.create(:name => params['name'])
+  if @store.save
+    redirect '/stores'
+  else
+    erb(:error)
+  end
 end
 
 get '/store/:id' do
