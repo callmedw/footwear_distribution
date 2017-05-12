@@ -3,4 +3,7 @@ class Brand < ActiveRecord::Base
   validates(:name, {:length => { :maximum => 100 }})
   validates(:name, presence: true)
   validates(:cost, presence: true)
+  validates :name, uniqueness: { case_sensitive: false }
+
+
 end
