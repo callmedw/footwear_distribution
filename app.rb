@@ -41,3 +41,25 @@ get '/stores' do
   @stores=Store.all
   erb :stores
 end
+
+post '/stores' do
+  Store.create(:name => params['name'])
+  redirect '/stores'
+end
+
+get '/store/:id' do
+  @store = Store.find(params['id'].to_i)
+  erb :store
+end
+
+patch '/store/:id' do
+  @store = Store.find(params['id'].to_i)
+  @store.update(:name => params['name'])
+  redirect '/stores'
+end
+
+delete '/store/:id' do
+  store = Store.find(params['id'].to_i)
+  store.delete
+  redirect '/stores'
+end
