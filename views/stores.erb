@@ -10,10 +10,11 @@
       <li><a href = "/store/<%= store.id %>"><%= store.name %></a></li>
     <% end %>
   </ul>
-  <h4>Click a store to edit or see associated brands</h4>
+  <p>Click a store to edit or see associated brands</p>
   <%else %>
-
-  <p> You don't have any stores!! </p>
+    <div class="alert alert-danger">
+      <strong>Sorry!</strong> There aren't any stores in the distribution network right now.
+    </div>
   <% end %>
 
   <form action="/stores" method="post">

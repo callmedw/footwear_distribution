@@ -5,19 +5,26 @@
 <div class="page_content">
   <h2> Update <%= @store.name %> </h2>
 
+  <h4> Update the name of this store. </h4>
   <form action ="/store/<%= @store.id%>" method="post">
     <input type="hidden" name="_method" value="patch">
-    <label for="name">Enter the new store name:</label>
+    <label for="name">Enter the new name:</label>
     <input type="text" name="name">
-    <button type ="submit">Change store name</button>
+    <button type ="submit">Update</button>
   </form>
 
-
+<h4> Delete this store from the distribution netword. </h4>
   <form action="/store/<%= @store.id %>" method="post">
     <input type="hidden" name="_method" value="delete">
     <button type="submit">Remove <%= @store.name %></button>
   </form>
 
+  <h3> Brands(s) currently available at <%= @store.name %>: </h3>
+  <ul>
+    <% @store.brands.each do |brand| %>
+      <li>  <%= brand.name%> </li>
+    <% end %>
+  </ul>
 
   <h3> Add brands to this store </h3>
   <% if @brands.any? %>
@@ -31,7 +38,9 @@
     <button type="submit">Add brands(s)</button>
   </form>
   <%else %>
-  <p> There are no brands in the distribution network right now. </p>
+    <div class="alert alert-danger">
+      <strong>Sorry!</strong> There aren't any brands in distribution right now.
+    </div>
   <% end %>
   </div>
 

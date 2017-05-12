@@ -9,9 +9,11 @@
       <li><a href = "/brand/<%= brand.id %>"><%= brand.name %></a></li>
     <% end %>
   </ul>
-  <h4>Click a brand to edit or see associated stores</h4>
+  <p>Click a brand to edit or see associated stores</p>
   <%else %>
-  <p> You don't have any brands!! </p>
+    <div class="alert alert-danger">
+      <strong>Sorry!</strong> There aren't any brands in distribution right now.
+    </div>
   <% end %>
 
   <form action="/brands" method="post">

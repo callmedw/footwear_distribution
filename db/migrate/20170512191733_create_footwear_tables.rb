@@ -2,6 +2,7 @@ class CreateFootwearTables < ActiveRecord::Migration[5.1]
   def change
     create_table(:brands) do |t|
       t.column(:name, :string)
+      t.column(:cost, :decimal, precision: 100, scale: 2)
       t.timestamps
     end
 
