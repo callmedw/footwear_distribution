@@ -1,8 +1,6 @@
-```
-# FRIDAY
-```
+#Footwear Distribution
 
-Description
+This website will allow footwear distributors to track which brands they offer and what stores carry them. Additionally, it will allow store owners to see which brands are available and add them to their own inventory.
 
 ## Screenshot
 
@@ -14,10 +12,6 @@ Description
 - [ ] Create new branch to make changes to code
 - [ ] Open files in atom or text editor of your choice
 - [ ] Open in a browser of your choice
-
-### Installing
-
-
 
 ## Built With
 
@@ -34,6 +28,16 @@ Description
 
 | behavior |  input   |  output  |
 |----------|:--------:|:--------:|
+||||
+||||
+||||
+||||
+||||
+||||
+||||
+||||
+||||
+||||
 
 ## Authors
 
@@ -43,4 +47,6 @@ Dana Weiss
 
 *open source GPL & MIT*
 
+```
 Copyright (c) 2017 **Dana Weiss**
+```
