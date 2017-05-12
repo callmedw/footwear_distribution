@@ -1,9 +1,24 @@
-.header {
+.index_header {
   margin: auto;
   text-align: center;
 }
 
-.main_nav {
+.index_nav {
+  margin: auto;
+  text-align: center;
+}
+
+.page_header {
+  margin: auto;
+  text-align: center;
+}
+
+.page_nav {
+  margin: auto;
+  text-align: center;
+}
+
+.page_content {
   margin: auto;
   text-align: center;
 }

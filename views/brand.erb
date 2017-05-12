@@ -1,0 +1,25 @@
+<div class="page_header">
+  <h1>Brand Management</h1>
+</div>
+
+<div class="page_content">
+  <h2> Update Brand </h2>
+  <form action ="/brand/<%= @brand.id%>" method="post">
+    <input type="hidden" name="_method" value="patch">
+    <label for="name">Enter the new brand name:</label>
+    <input type="text" name="name">
+    <button type ="submit">Change brand name</button>
+  </form>
+
+
+  <form action="/brand/<%= @brand.id %>" method="post">
+    <input type="hidden" name="_method" value="delete">
+    <button type="submit">Remove Brand</button>
+  </form>
+</div>
+
+<div class="page_nav">
+  <a href="/brands">See brands</a>
+  <a href="/stores">See Stores</a>
+  <a href="/">Home</a>
+</div>
