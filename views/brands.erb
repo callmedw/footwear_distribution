@@ -2,6 +2,8 @@
   <h1>Brands</h1>
 </div>
 
+<br>
+
 <div class="page_content">
   <% if @brands.any? %>
   <p>Click a brand to edit the brand or see which stores currenly carry the brand</p>
@@ -16,6 +18,8 @@
     </div>
   <% end %>
 
+<br>
+
   <h3>Add a new brand to distribution:</h3>
   <form action="/brands" method="post">
     <label for="name">Enter brand name here:</label>
@@ -25,12 +29,12 @@
 
     <button type="submit">Add Brand</button>
   </form>
-
-
-
 </div>
+
+<br>
+
 <div class="page_nav">
-  <a href="/brands">See brands</a>
-  <a href="/stores">See Stores</a>
-  <a href="/">Home</a>
+  <a href="/brands">brands</a>
+  <a href="/">home</a>
+  <a href="/stores">stores</a>
 </div>

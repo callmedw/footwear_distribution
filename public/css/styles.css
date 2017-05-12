@@ -1,5 +1,7 @@
 .index_header {
+  padding-bottom: 20px;
   margin: auto;
+  padding-top: 150px;
   text-align: center;
   background-color: white;
   width: 100%;
@@ -21,6 +23,7 @@
 
 .page_header {
   margin: auto;
+  margin-top: 100px;
   text-align: center;
   font-family: "HCo Verlag", "CenturyGothic",
   sans-serif;
@@ -52,4 +55,80 @@ h2, h3 {
   text-transform: uppercase;
   word-spacing: 1px;
   height: 100%;
+}
+
+img {
+  margin-left: auto;
+  align-self: center;
+  width: 250px;
+  margin: auto;
+}
+
+.link {
+	outline: none;
+	text-decoration: none;
+	position: relative;
+	font-size: 120px;
+	line-height: 1;
+	color: #9e9ba4;
+	display: inline-block;
+  margin: 2px;
+  padding: 1px;
+}
+
+.link--transform {
+	text-transform: uppercase;
+	font-weight: 900;
+	overflow: hidden;
+	line-height: 0.75;
+	color: #b2b0a9;
+  margin: 2px;
+  padding: 1px;
+}
+
+.link--transform:hover {
+	color: #b2b0a9;
+  margin: 2px;
+  padding: 1px;
+}
+
+.link--transform::after {
+	content: '';
+	position: absolute;gi
+	height: 16px;
+	width: 100%;
+	top: 50%;
+	margin-top: 2px;
+	right: 0;
+	background: #F9F9F9;
+	transform: translate3d(-100%,0,0);
+	transition: transform 0.4s;
+	transition-timing-function: cubic-bezier(0.7,0,0.3,1);
+  margin: 2px;
+  padding: 1px;
+}
+
+.link--transform:hover::after {
+	transform: translate3d(100%,0,0);
+}
+
+.link--transform::before {
+	content: attr(data-letters);
+	position: absolute;
+	z-index: 2;
+	overflow: hidden;
+	color: #424242;
+	white-space: nowrap;
+	width: 0%;
+	transition: width 0.4s 0.3s;
+  margin: 2px;
+  padding: 1px;
+}
+
+.link--transform:hover::before {
+	width: 100%;
+}
+
+ul {
+  list-style-type: none;
 }

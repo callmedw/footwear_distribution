@@ -2,20 +2,23 @@
   <h1>Stores</h1>
 </div>
 
+<br>
+
 <div class="page_content">
   <% if @stores.any? %>
-
+  <p>Click a store to edit the store or see which brands the store currenly carries</p>
   <ul>
     <% @stores.each do |store| %>
       <li><a href = "/store/<%= store.id %>"><%= store.name %></a></li>
     <% end %>
   </ul>
-  <p>Click a store to edit or see associated brands</p>
   <%else %>
     <div class="alert alert-danger">
       <strong>Sorry!</strong> There aren't any stores in the distribution network right now.
     </div>
   <% end %>
+
+<br>
 
   <h3>Add a new store to distribution:</h3>
   <form action="/stores" method="post">
@@ -24,11 +27,12 @@
 
     <button type="submit">Add Store</button>
   </form>
-
 </div>
 
+<br>
+
 <div class="page_nav">
-  <a href="/brands">See brands</a>
-  <a href="/stores">See Stores</a>
-  <a href="/">Home</a>
+  <a href="/brands">brands</a>
+  <a href="/">home</a>
+  <a href="/stores">stores</a>
 </div>

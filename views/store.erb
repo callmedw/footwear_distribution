@@ -5,6 +5,8 @@
 <div class="page_content">
   <h2> Update <%= @store.name %> </h2>
 
+<br>
+
   <h4> Update the name of this store. </h4>
   <form action ="/store/<%= @store.id%>" method="post">
     <input type="hidden" name="_method" value="patch">
@@ -13,11 +15,16 @@
     <button type ="submit">Update</button>
   </form>
 
+<br>
+
 <h4> Delete this store from the distribution netword. </h4>
   <form action="/store/<%= @store.id %>" method="post">
     <input type="hidden" name="_method" value="delete">
     <button type="submit">Remove <%= @store.name %></button>
   </form>
+
+<br>
+<br>
 
   <h3> Brands(s) currently available at <%= @store.name %>: </h3>
   <ul>
@@ -25,6 +32,8 @@
       <li>  <%= brand.name%> $<%= brand.cost%></li>
     <% end %>
   </ul>
+
+<br>
 
   <h3> Add brands to this store </h3>
   <% if @brands.any? %>
@@ -36,6 +45,7 @@
       ($<%= brands.cost%>)
   </label>
     <% end %>
+    <br>
     <button type="submit">Add brands(s)</button>
   </form>
   <%else %>
@@ -44,11 +54,12 @@
     </div>
   <% end %>
   </div>
-
 </div>
 
+<br>
+
 <div class="page_nav">
-  <a href="/brands">See brands</a>
-  <a href="/stores">See Stores</a>
-  <a href="/">Home</a>
+  <a href="/brands">brands</a>
+  <a href="/">home</a>
+  <a href="/stores">stores</a>
 </div>

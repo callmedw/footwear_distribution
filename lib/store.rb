@@ -4,3 +4,12 @@ class Store < ActiveRecord::Base
   validates(:name, presence: true)
   validates :name, uniqueness: { case_sensitive: false }
 end
+
+
+define_method(:title_case) do
+  words = self.name.split(" ")
+  words.each do |word|
+    word.capitalize!
+  end
+  self.name = words.join(" ")
+end

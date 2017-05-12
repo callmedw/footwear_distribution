@@ -6,6 +6,7 @@
   <h2> Update <%= @brand.name %> </h2>
   <p> current cost $<%= @brand.cost %> </p>
 
+  <br>
 
   <h4> Update the name or cost of this brand. </h4>
   <form action ="/brand/<%= @brand.id%>" method="post">
@@ -17,11 +18,16 @@
     <button type ="submit">Update</button>
   </form>
 
+  <br>
+
   <h4> Delete this brand from distribution. </h4>
   <form action="/brand/<%= @brand.id %>" method="post">
     <input type="hidden" name="_method" value="delete">
     <button type="submit">Remove <%= @brand.name %></button>
   </form>
+
+  <br>
+  <br>
 
   <h3> Store(s) that currently carry <%= @brand.name %>: </h3>
   <ul>
@@ -29,6 +35,8 @@
       <li>  <%= store.name%> </li>
     <% end %>
   </ul>
+
+  <br>
 
   <h4> Add stores that carry this brand </h4>
   <% if @stores.any? %>
@@ -39,6 +47,7 @@
       <%= store.name %>
   </label>
     <% end %>
+    <br>
     <button type="submit">Add store(s)</button>
   </form>
   <%else %>
@@ -49,8 +58,10 @@
   <% end %>
 </div>
 
+<br>
+
 <div class="page_nav">
-  <a href="/brands">See brands</a>
-  <a href="/stores">See Stores</a>
-  <a href="/">Home</a>
+  <a href="/brands">brands</a>
+  <a href="/">home</a>
+  <a href="/stores">stores</a>
 </div>
