@@ -4,18 +4,19 @@
 
 <div class="page_content">
   <% if @brands.any? %>
+  <p>Click a brand to edit the brand or see which stores currenly carry the brand</p>
   <ul>
     <% @brands.each do |brand| %>
       <li><a href = "/brand/<%= brand.id %>"><%= brand.name %>...$<%= brand.cost %></a></li>
     <% end %>
   </ul>
-  <p>Click a brand to edit or see associated stores</p>
   <%else %>
     <div class="alert alert-danger">
       <strong>Sorry!</strong> There aren't any brands in distribution right now.
     </div>
   <% end %>
 
+  <h3>Add a new brand to distribution:</h3>
   <form action="/brands" method="post">
     <label for="name">Enter brand name here:</label>
     <input type="text" name="name">
