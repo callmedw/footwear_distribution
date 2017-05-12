@@ -1,24 +1,45 @@
 .index_header {
   margin: auto;
   text-align: center;
+  background-color: white;
+  width: 100%;
+  font-family: "HCo Verlag", "CenturyGothic",  sans-serif;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  word-spacing: 3px;
+  font-size: 300%;
+  height: 100%;
 }
 
 .index_nav {
   margin: auto;
   text-align: center;
+  font-family: "HCo Verlag", "CenturyGothic",
+  sans-serif;
+  letter-spacing: 2px;
 }
 
 .page_header {
   margin: auto;
   text-align: center;
+  font-family: "HCo Verlag", "CenturyGothic",
+  sans-serif;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  word-spacing: 3px;
 }
 
 .page_nav {
   margin: auto;
   text-align: center;
+  font-family: "HCo Verlag", "CenturyGothic",
+  sans-serif;
+  letter-spacing: 2px;
 }
 
 .page_content {
   margin: auto;
   text-align: center;
+  font-family: "HCo Verlag", "CenturyGothic",
+  sans-serif;
 }

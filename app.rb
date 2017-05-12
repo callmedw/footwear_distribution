@@ -20,13 +20,26 @@ post '/brands' do
 end
 
 get '/brand/:id' do
+  @stores = Store.all
   @brand = Brand.find(params['id'].to_i)
   erb :brand
 end
 
-patch '/brand/:id' do
+post '/brand/:id' do
   @brand = Brand.find(params['id'].to_i)
-  @brand.update(:name => params['name'])
+  @brand.update(:store_ids => params['stores_id'])
+  @stores = Store.all
+  redirect "/brand/#{@brand.id}"
+end
+
+patch '/brand/:id' do
+  name = params['name']
+  @brand = Brand.find(params['id'].to_i)
+  if (name.split('').any?)
+    @brand.update({:name => name})
+  else
+    @brand.update({:name => "#{@brand.name}"})
+  end
   redirect '/brands'
 end
 
@@ -38,7 +51,7 @@ end
 
 # store pages
 get '/stores' do
-  @stores=Store.all
+  @stores = Store.all
   erb :stores
 end
 
@@ -48,8 +61,16 @@ post '/stores' do
 end
 
 get '/store/:id' do
+  @brands = Brand.all
   @store = Store.find(params['id'].to_i)
   erb :store
+end
+
+post '/store/:id' do
+  @store = Store.find(params['id'].to_i)
+  @store.update(:brand_ids => params['brands_id'])
+  @brands = Brand.all
+  redirect "/store/#{@store.id}"
 end
 
 patch '/store/:id' do

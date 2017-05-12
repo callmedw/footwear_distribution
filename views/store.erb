@@ -3,7 +3,8 @@
 </div>
 
 <div class="page_content">
-  <h2> Update Store </h2>
+  <h2> Update <%= @store.name %> </h2>
+
   <form action ="/store/<%= @store.id%>" method="post">
     <input type="hidden" name="_method" value="patch">
     <label for="name">Enter the new store name:</label>
@@ -14,8 +15,26 @@
 
   <form action="/store/<%= @store.id %>" method="post">
     <input type="hidden" name="_method" value="delete">
-    <button type="submit">Remove Store</button>
+    <button type="submit">Remove <%= @store.name %></button>
   </form>
+
+
+  <h3> Add brands to this store </h3>
+  <% if @brands.any? %>
+  <form action="/store/<%= @store.id %>" method="post">
+    <% @brands.each do |brands| %>
+    <label>
+    <input type="checkbox" name="brands_id[]" value="<%= brands.id %>">
+      <%= brands.name %>
+  </label>
+    <% end %>
+    <button type="submit">Add brands(s)</button>
+  </form>
+  <%else %>
+  <p> There are no brands in the distribution network right now. </p>
+  <% end %>
+  </div>
+
 </div>
 
 <div class="page_nav">

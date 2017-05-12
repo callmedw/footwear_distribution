@@ -4,7 +4,6 @@
 
 <div class="page_content">
   <% if @brands.any? %>
-  <h2>Your brands:</h2>
   <ul>
     <% @brands.each do |brand| %>
       <li><a href = "/brand/<%= brand.id %>"><%= brand.name %></a></li>
@@ -23,7 +22,7 @@
   </form>
 
 
-  
+
 </div>
 <div class="page_nav">
   <a href="/brands">See brands</a>

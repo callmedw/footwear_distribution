@@ -3,7 +3,9 @@
 </div>
 
 <div class="page_content">
-  <h2> Update Brand </h2>
+  <h2> Update <%= @brand.name %> </h2>
+
+
   <form action ="/brand/<%= @brand.id%>" method="post">
     <input type="hidden" name="_method" value="patch">
     <label for="name">Enter the new brand name:</label>
@@ -11,11 +13,25 @@
     <button type ="submit">Change brand name</button>
   </form>
 
-
   <form action="/brand/<%= @brand.id %>" method="post">
     <input type="hidden" name="_method" value="delete">
-    <button type="submit">Remove Brand</button>
+    <button type="submit">Remove <%= @brand.name %></button>
   </form>
+
+  <h3> Add stores to carry this brand </h3>
+  <% if @stores.any? %>
+  <form action="/brand/<%= @brand.id %>" method="post">
+    <% @stores.each do |store| %>
+    <label>
+    <input type="checkbox" name="stores_id[]" value="<%= store.id %>">
+      <%= store.name %>
+  </label>
+    <% end %>
+    <button type="submit">Add store(s)</button>
+  </form>
+  <%else %>
+  <p> There are no store in distribution right now. </p>
+  <% end %>
 </div>
 
 <div class="page_nav">

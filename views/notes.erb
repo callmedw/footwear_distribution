@@ -11,18 +11,11 @@
 </div>
 
 
-
-
-<h2> Update Brand </h2>
-<form action ="/brand/<%= @brand.id%>" method="post">
-  <input type="hidden" name="_method" value="patch">
-  <label for="name">Enter the new brand name:</label>
-  <input type="text" name="name">
-  <button type ="submit">Change brand name</button>
-</form>
-
-
-<form action="/brand/<%= @brand.id %>" method="post">
-  <input type="hidden" name="_method" value="delete">
-  <button type="submit">Remove Brand</button>
-</form>
+<ul>
+  <% @brand.stores.each do |category| %>
+  <li> <a href="/store/<%= store.id%>"><%= store.name %></a></li>
+  <% end %>
+</ul>
+<% else %>
+<p> This brand is not in stores yet! </p>
+<% end %>
