@@ -35,7 +35,7 @@ describe 'the create, update, and delete a store pathway', {:type => :feature} d
     visit '/'
     expect(page).to have_content "Footwear Distribution Center"
     click_link('stores')
-    expect(page).to have_content "Add a new store to distribution"
+    expect(page).to have_content "Enter store name here"
     fill_in('name', :with => 'Cool Shoe Store')
     click_button('Add Store')
     expect(page).to have_content "Cool Shoe Store"

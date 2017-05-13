@@ -10,4 +10,9 @@ describe(Brand) do
     brand = Brand.create({name: "'It is great to be known for your shoes but it is better to be known for your sole' says Kenneth Cole, but on the other hand Cinderalla proved that a new pair of shoes can change your life"})
     expect(brand.save).to eq(false)
   end
+
+  it("returns the brand name in title case") do
+    brand = Brand.create({name: "stuart weitzman"})
+    expect(brand.name).to eq('Stuart Weitzman')
+  end
 end
