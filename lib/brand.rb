@@ -9,11 +9,11 @@ class Brand < ActiveRecord::Base
 
 
   define_method(:title_case) do
-    split = self.name.split(' ')
-    split.each do |word|
-      title_cased = word.capitalize!.join(' ')
+    words = self.name.downcase.split(' ')
+    words.each do |word|
+      word.capitalize!
     end
-    self.name = title_cased
+    self.name = words.join(' ')
   end
 
 
